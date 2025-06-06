@@ -15,7 +15,9 @@
 #include <cmath>
 #include <execution>
 #include <fstream>
+#include <numeric>
 #include <iterator>
+#include <string>
 #include <ranges>
 #include <vector>
 
