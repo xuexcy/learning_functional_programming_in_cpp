@@ -13,3 +13,7 @@ add_executable(${main_name} chapter_01/main.cc)
 set(main_name chapter_02_main)
 add_executable(${main_name} chapter_02/main.cc)
 
+
+set(main_name chapter_03_main)
+add_executable(${main_name} chapter_03/main.cc)
+target_link_libraries(${main_name} boost_phoenix)

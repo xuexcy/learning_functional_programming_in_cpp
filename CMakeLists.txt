@@ -49,7 +49,7 @@ set(EXTRA_LIBS ${EXTRA_LIBS} cpp_utils)
 # FetchContent_MakeAvailable(google_benchmark)
 
 # import boost
-set(BOOST_INCLUDE_LIBRARIES bimap dll)
+set(BOOST_INCLUDE_LIBRARIES phoenix)
 set(BOOST_ENABLE_CMAKE ON)
 FetchContent_Declare(
     boost
@@ -65,7 +65,7 @@ FetchContent_MakeAvailable(boost)
 # # foreach(lib IN LISTS libs)
 # #     include_directories(${THIRDPARTY_DIR}/boost/libs/${lib}/include)
 # # endforeach()
-# 
+#
 # #FetchContent_Declare(
 # #    eigen
 # #    URL https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz
@@ -75,7 +75,7 @@ FetchContent_MakeAvailable(boost)
 # #    EXCLUDE_FROM_ALL
 # #)
 # #FetchContent_MakeAvailable(eigen)
-# 
+#
 # # FetchContent_Declare(
 # #     folly
 # #     # GIT_REPOSITORY https://github.com/facebook/folly.git
@@ -84,7 +84,7 @@ FetchContent_MakeAvailable(boost)
 # #     SOURCE_DIR ${THIRDPARTY_DIR}/folly
 # # )
 # # FetchContent_MakeAvailable(folly)
-# 
+#
 # #find_package(folly REQUIRED)
 # #include_directories(${FOLLY_INCLUDE_DIRS})
 
@@ -106,4 +106,5 @@ FetchContent_MakeAvailable(boost)
 #     target_link_libraries(${target_name} ${EXTRA_LIBS})
 # endforeach ()
 
+include_directories(src)
 add_subdirectory(src)

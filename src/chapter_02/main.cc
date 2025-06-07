@@ -7,7 +7,7 @@
 # Author : xuechengyun
 # E-mail : xuechengyun@gmail.com
 # Date   : 2025/06/05 13:06:07
-# Desc   :
+# Desc   : chapter_02 函数式编程之旅
 ########################################################################
 */
 
@@ -19,6 +19,9 @@
 #include <print>
 #include <ranges>
 #include <vector>
+
+#include "common/people.h"
+
 #include "cpp_utils/util.h"
 
 // 2.1 函数使用函数?
@@ -89,14 +92,7 @@ std::string trim(std::string s) {
 
 // 2.2.4 基于谓词分割集合
 // partition
-struct Person {
-  enum class Gender {
-    Male,
-    Female
-  };
-  std::string name;
-  Gender gender;
-};  // struct Person
+
 template <>
 // must in namespace std
 struct std::formatter<Person> : std::formatter<std::string> {
@@ -106,11 +102,10 @@ struct std::formatter<Person> : std::formatter<std::string> {
   }
 };
 bool is_female(const Person& person) {
-  return person.gender == Person::Gender::Female;
+  return person.gender == Gender::Female;
 }
 void run_partition() {
   PRINT_CURRENT_FUNCTION_NAME;
-  using Gender = Person::Gender;
   auto print_person = [](auto person) { std::print("{} ", person); };
   std::vector<Person> people{
     {"Perter", Gender::Male},
@@ -184,7 +179,6 @@ void run_stable_partition() {
 // 2.2.5 过滤 (Filtering) 和转换 (Transforming)
 void run_filtering_and_transform() {
   PRINT_CURRENT_FUNCTION_NAME;
-  using Gender = Person::Gender;
   auto print_person = [](auto person) { std::print("{} ", person); };
   std::vector<Person> people{
     {"Perter", Gender::Male},

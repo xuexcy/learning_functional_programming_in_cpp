@@ -1,0 +1,38 @@
+void run_function_pointer()
+42
+42
+42
+
+void run_function_object()
+count_if(age > 42): 3
+older_than(age > 42): 3
+older_than(age > 60): 1
+
+void run_template_function_object()
+count_if(age > 42): 3
+count_if(age > 42): 3
+
+void run_lambda()
+An 0
+Pond 1
+
+void run_error()
+[id: 2, error: false] [id: 3, error: false] 
+[id: 1, error: true] [id: 4, error: true] 
+[id: 2, error: false] [id: 3, error: false] 
+[id: 2, error: false] [id: 3, error: false] 
+[id: 2, error: false] [id: 3, error: false] 
+[id: 2, error: false] [id: 3, error: false] 
+[id: 1, error: true] [id: 4, error: true] 
+[id: 1, error: true] [id: 4, error: true] 
+[id: 1, error: true] [id: 4, error: true] 
+[id: 1, error: true] [id: 4, error: true] 
+
+void run_boost_phoenix()
+21 5 62 42 53 
+numbers after partition (<= 42) using std::less_equal : [21 5 42 62 53]
+numbers after partition (<= 42) using boost::phoenix::arg_names : [21 5 42 62 53]
+numbers accumulate (arg1 + arg2 * arg2 / 2) using boost::phoenix::arg_names : 4440
+for loop (arg1 + arg2 * arg2 / 2), res: 4440
+
+void run_std_function()
