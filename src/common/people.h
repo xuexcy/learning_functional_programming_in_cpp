@@ -12,7 +12,10 @@
 */
 #pragma once
 
+#include <iostream>
+#include <print>
 #include <string>
+
 enum class Gender {
   Male,
   Female
@@ -22,4 +25,16 @@ struct Person {
   std::string name{};
   Gender gender;
   int age{};
+  std::string surname{};
+  enum class OutputFormat {
+    NameOnly,
+    FullName
+  };  // enum class OutputFormat
+  void print(std::ostream& out, OutputFormat format) const {
+    if (format == OutputFormat::NameOnly) {
+      out << name << std::endl;
+    } else if (format == Person::OutputFormat::FullName) {
+      out << name << " " << surname << std::endl;
+    }
+  }
 };  // struct Person

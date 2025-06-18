@@ -1,0 +1,43 @@
+void run_partial_function_application()
+1 > 42: false
+50 > 42: true
+Perter
+Martha
+Jane
+David
+Rose
+Tom
+Perter A
+Martha B
+Jane C
+David D
+Rose E
+Tom F
+Perter
+Martha
+Jane
+David
+Rose
+Tom
+Perter A
+Martha B
+Jane C
+David D
+Rose E
+Tom F
+
+void run_curring()
+
+void run_count_words()
+void print_common_words(const std::string&)
+std::vector<std::__cxx11::basic_string<char> > words(const std::string&)
+std::unordered_map<T, unsigned int> count_occurrences(const C&) [with C = std::vector<std::__cxx11::basic_string<char> >; T = std::__cxx11::basic_string<char>]
+std::vector<P> reverse_pairs(const C&) [with C = std::unordered_map<std::__cxx11::basic_string<char>, unsigned int, std::hash<std::__cxx11::basic_string<char> >, std::equal_to<std::__cxx11::basic_string<char> >, std::allocator<std::pair<const std::__cxx11::basic_string<char>, unsigned int> > >; P = std::pair<unsigned int, std::__cxx11::basic_string<char> >]
+std::vector<P> sort_by_freq(std::vector<P>) [with P = std::pair<unsigned int, std::__cxx11::basic_string<char> >]
+void print(const std::vector<P>&) [with P = std::pair<unsigned int, std::__cxx11::basic_string<char> >]
+3 example
+2 world
+2 hello
+1 text
+1 ranges
+

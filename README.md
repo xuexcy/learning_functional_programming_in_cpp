@@ -9,12 +9,14 @@
 - `run.sh`: 运行所有编译后的可执行文件，并将结果输出到 stdout 目录
 - `build_one.sh`: 编译 src 目录下的一个 .cc 文件，具体编译哪一个文件取决于 `env_variable.sh` 中的 `default_execute_file` 环境变量。 这个脚本主要是自己修改、测试某个 .cc 代码的时候使用，该文件里没有调用 cmake，如果编译的相关依赖发生改变，请重新执行 `build.sh` 生成新的 makefile 文件
 - `run_one.sh`: 执行一个编译结果，同 `build_one.sh` 一样，具体哪个取决于 `env_variable.sh` 中的 `default_execute_file`
+- br_one.sh: 编译一个并执行
 - `src/*.cc`: 各个 main 文件
 
 # 目录
 1. 函数式编程简介
 2. 函数式编程之旅
 3. 函数对象
+4. 以旧函数创建新函数
 
 # 其他
 1. 使用 g++ 编译，因为 clang 现在(2025/06/05)还没有支持 `std::execution::par`
