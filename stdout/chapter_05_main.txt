@@ -1,0 +1,16 @@
+void run_max()
+Maximum is : 1
+Maximum is : 2
+Maximum is : 3
+6
+
+void run_maze()
+exit game, bye bye
+
+void run_const()
+Name::Name(Name&&)
+Name::Name(const Name&)
+ConstPerson ConstPerson::with_name(const std::string&) const &
+ConstPerson ConstPerson::with_surname(const std::string&) &&
+ConstPerson ConstPerson::with_surname(const std::string&) const &
+ConstPerson ConstPerson::with_name(const std::string&) &&
