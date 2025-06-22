@@ -1,0 +1,11 @@
+void run_memoization()
+fib(10) = 55
+fib(10) = 55
+fib(10) = 55
+fib(10) = 55
+fib(10) = 55
+fib(10) = 55
+
+void run_lazy_string()
+Full name: Smith, Jane
+
