@@ -66,6 +66,18 @@ FetchContent_MakeAvailable(boost)
 # #     include_directories(${THIRDPARTY_DIR}/boost/libs/${lib}/include)
 # # endforeach()
 #
+
+# import ranges-v3
+FetchContent_Declare(
+    range-v3
+    GIT_REPOSITORY https://github.com/ericniebler/range-v3.git
+    GIT_TAG master
+    GIT_SHALLOW TRUE
+    SOURCE_DIR ${THIRDPARTY_DIR}/range-v3
+)
+FetchContent_MakeAvailable(range-v3)
+
+# FetchContent_MakeAvailable(google_benchmark)
 # #FetchContent_Declare(
 # #    eigen
 # #    URL https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz
