@@ -1,0 +1,7 @@
+void run_list()
+[addr: 0x14de06010, value: A] -> [addr: 0x14de05f90, value: B] -> [addr: 0x14de05f10, value: C] -> [addr: 0x14de05bf0, value: D] -> [addr: nullptr]
+[addr: 0x14de05c20, value: E] -> [addr: 0x14de06010, value: A] -> [addr: 0x14de05f90, value: B] -> [addr: 0x14de05f10, value: C] -> [addr: 0x14de05bf0, value: D] -> [addr: nullptr]
+[addr: 0x14de05f90, value: B] -> [addr: 0x14de05f10, value: C] -> [addr: 0x14de05bf0, value: D] -> [addr: nullptr]
+[addr: 0x14de05c80, value: A] -> [addr: 0x14de05cb0, value: B] -> [addr: 0x14de05ce0, value: C] -> [addr: 0x14de05d10, value: D] -> [addr: 0x14de05c50, value: E] -> [addr: nullptr]
+[addr: 0x14de05de0, value: A] -> [addr: 0x14de05e10, value: B] -> [addr: 0x14de06050, value: C] -> [addr: nullptr]
+
