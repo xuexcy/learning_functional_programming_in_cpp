@@ -49,3 +49,7 @@ set(chapter chapter_10)
 set(main_name ${chapter}_main)
 add_executable(${main_name} ${chapter}/main.cc)
 target_link_libraries(${main_name} range-v3::range-v3)
+
+set(chapter chapter_11)
+set(main_name ${chapter}_main)
+add_executable(${main_name} ${chapter}/main.cc)
