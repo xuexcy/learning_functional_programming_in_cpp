@@ -15,12 +15,14 @@
 #include <numeric>
 #include <print>
 
-inline auto format_container = [](auto&& c) {
+template <typename Container>
+auto format_container(Container&& c) {
   return std::accumulate(c.cbegin(), c.cend(), std::string(), [](auto&& pre, auto&& cur) {
     return pre.empty() ? std::format("{}", cur) : std::format("{} {}", pre, cur);
   });
 };
-inline auto print_container = [](auto&& c) {
+template <typename Container>
+void print_container(Container&& c) {
   std::ranges::for_each(c, [](auto&& elem) { std::print("{} ", elem); });
   std::println();
 };

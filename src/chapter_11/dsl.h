@@ -16,6 +16,8 @@
 #include <type_traits>
 #include <utility>
 
+namespace dsl {
+
 template <typename Member, typename Value>
 struct Update {
   Update(Member _member, Value _value) : member(_member), value(_value) {}
@@ -77,3 +79,5 @@ template <typename Record>
 Transaction<Record> with(Record& record) {
   return Transaction(record);
 }
+
+}  // namespace dsl

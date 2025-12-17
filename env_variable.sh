@@ -6,12 +6,15 @@ then
     this_script_dir=$(cd `dirname ${BASH_SOURCE[0]}`; pwd)
 fi
 
-echo "Project root dir:" $this_script_dir
+export GREEN='\033[0;32m'
+export NC='\033[0m' # No Color
+
+echo ${GREEN} "Project root dir:" $this_script_dir ${NC}
 echo ''
 
 #export compiler=clang++
 export compiler=g++
-export default_execute_file=chapter_11_main
+export default_execute_file=chapter_12_main
 
 # cmake 工作目录
 if [[ $compiler == "g++" ]];
@@ -24,9 +27,13 @@ else
     export CXX="clang++"
     export build_dir=${this_script_dir}/build
 fi
-echo "Compiler:" $CXX
+echo ${GREEN} "Compiler:" $CXX ${NC}
 $CXX -v
 echo ''
+
+# anaconda 中的一些工具导致了链接错误
+PATH=$(echo $PATH | tr ':' '\n' | grep -v "anaconda" | tr '\n' ':')
+
 
 # export lib_profiler_dir=`brew --prefix gperftools`/lib
 # echo "Lib profiler dir: "$lib_profiler_dir

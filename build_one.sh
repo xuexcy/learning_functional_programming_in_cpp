@@ -25,7 +25,7 @@ if [ $# -gt 0 ]; then
 fi
 
 cd $build_dir
-make $main
+make $main # VERBOSE=1
 
 status=$?
 if [ $status != 0 ]; then

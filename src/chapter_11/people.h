@@ -23,9 +23,9 @@ struct Record {
   unsigned int age;
 };  // struct Record
 
-inline auto name = Field(&Record::name);
-inline auto surname = Field(&Record::surname);
-inline auto age = Field(&Record::age);
+inline auto name = dsl::Field(&Record::name);
+inline auto surname = dsl::Field(&Record::surname);
+inline auto age = dsl::Field(&Record::age);
 
 }  // namespace person
 
@@ -39,8 +39,7 @@ struct Record {
   bool set_age(unsigned int _age) { age = _age; return true;}
 };  // struct Record
 
-inline auto name = Field(&Record::set_name);
-inline auto surname = Field(&Record::set_surname);
-inline auto age = Field(&Record::set_age);
-
-}  // namespace person
+static auto name = dsl::Field(&Record::set_name);
+static auto surname = dsl::Field(&Record::set_surname);
+static auto age = dsl::Field(&Record::set_age);
+}  // namespace person2

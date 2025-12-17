@@ -4,8 +4,24 @@ project(cpp_cmake_project_template)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-message ("compiler: ${CMAKE_CXX_COMPILER}")
-# set(CMAKE_BUILD_TYPE Debug)
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden -fvisibility-inlines-hidden")
+
+# 或通过变量检查链接标志
+# message(STATUS "Linker flags: ${CMAKE_EXE_LINKER_FLAGS}")
+# execute_process(
+#     COMMAND bash -c "which ld"
+#     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#     RESULT_VARIABLE result
+#     OUTPUT_VARIABLE output
+#     ERROR_VARIABLE error
+# )
+#
+# # 打印结果
+# message(STATUS "Command result: ${result}")
+# message(STATUS "Output: ${output}")
+# if(error)
+#     message(WARNING "Error: ${error}")
+# endif()
 
 set(THIRDPARTY_DIR ${CMAKE_SOURCE_DIR}/thirdparty)
 message("thirdparty dir: " ${THIRDPARTY_DIR})
@@ -49,7 +65,8 @@ set(EXTRA_LIBS ${EXTRA_LIBS} cpp_utils)
 # FetchContent_MakeAvailable(google_benchmark)
 
 # import boost
-set(BOOST_INCLUDE_LIBRARIES phoenix)
+set(BOOST_INCLUDE_LIBRARIES asio phoenix system)
+set(Boost_NO_SYSTEM_PATHS ON)
 set(BOOST_ENABLE_CMAKE ON)
 FetchContent_Declare(
     boost
@@ -76,6 +93,17 @@ FetchContent_Declare(
     SOURCE_DIR ${THIRDPARTY_DIR}/range-v3
 )
 FetchContent_MakeAvailable(range-v3)
+
+# import nlohmann json
+FetchContent_Declare(
+    nlohmann_json
+    GIT_REPOSITORY https://github.com/nlohmann/json.git
+    GIT_TAG v3.12.0
+    URL_HASH SHA256=c62ce6e64d34414864fef946363db91cea89c1b90360eabed0515f0eda74c75c
+    GIT_SHALLOW TRUE
+    SOURCE_DIR ${THIRDPARTY_DIR}/nlohmann/json
+)
+FetchContent_MakeAvailable(nlohmann_json)
 
 # FetchContent_MakeAvailable(google_benchmark)
 # #FetchContent_Declare(

@@ -18,9 +18,10 @@
 #include <utility>
 #include <vector>
 
-#include "chapter_11/people.h"
-#include "common/people.h"
 #include "cpp_utils/util.h"
+
+#include "common/people.h"
+#include "people.h"
 
 // 11.1 编译时操作类型
 template <typename T>
@@ -202,7 +203,7 @@ void run_dsl() {
     // 这里的 name 是 Field{&person::Record::name}
     // 在 struct Update 中执行 operator() 时，调用的语句是 std::invoke(member, record) = value;
     // 因为 Member(即&person::Record::name) 是不能 invoke 的，只能赋值，即 record.name = value
-    with(martha)(
+    dsl::with(martha)(
       name = "Martha",
       surname = "Jones",
       age = 42
@@ -217,7 +218,7 @@ void run_dsl() {
     // 这里的 name 是 Field{&person2::Record::set_name}
     // 在 struct Update 中执行 operator() 时，调用的语句是 return std::invoke(member, record, value)
     // 因为 Member(即&person2::Record::set_name) 是可以 invoke 的, 并返回了 bool 值
-    with(martha)(
+    dsl::with(martha)(
       name = "Martha",
       surname = "Jones",
       age = 42
