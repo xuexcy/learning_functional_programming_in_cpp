@@ -18,12 +18,12 @@
 
 namespace detail {
 inline bool is_not_space(char c) {
-  return std::isspace(c, std::locale());
+  return !std::isspace(c, std::locale());
 }
 }
 
 inline std::string trim_left(std::string str) {
-  str.erase(str.begin(), std::find_if_not(str.begin(), str.end(), detail::is_not_space));
+  str.erase(str.begin(), std::find_if(str.begin(), str.end(), detail::is_not_space));
   return str;
 }
 

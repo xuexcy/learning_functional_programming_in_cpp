@@ -60,3 +60,7 @@ set(main_name ${chapter}_main)
 add_executable(${main_name} ${chapter}/main.cc)
 #add_subdirectory(${chapter}/actor)
 target_link_libraries(${main_name} boost_asio boost_system nlohmann_json::nlohmann_json)
+
+set(chapter chapter_13)
+set(main_name ${chapter}_main)
+add_executable(${main_name} ${chapter}/main.cc)
